@@ -7,7 +7,7 @@ Single player battleships, via CLI or GUI using [pygame](https://www.pygame.org)
 
 ## How to install
 
-1. Clone or download as zip this repo.
+1. Clone or download this repository as a zip archive.
 2. At this point you can run the CLI version of the game.
 ```
 python battleships_cli.py
