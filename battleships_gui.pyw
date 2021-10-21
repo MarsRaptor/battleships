@@ -15,6 +15,15 @@ LOGGING_FILE = "battleships_gui.log"
 LOGGING_LVL  = logging.WARNING
 #===
 
+HOWTO_TEXT = "Welcome to single player Battleships!<br> <br>"
+HOWTO_TEXT += "After setting the dimensions of the grid you want to play in, and adjusting the number of different ships placed on the map, you are greeted with the game screen.<br>"
+HOWTO_TEXT +="On the screen will be displayed :<br> - The game grid on the left.<br> - The information and action panel on the right.<br> <br>"
+HOWTO_TEXT +='You must first select an open cell on the grid, once selected the "Hit" button will be enabled and allows you to find the ships hidden on the map.<br>'
+HOWTO_TEXT +='Missed shots will be represented by a red "X", hits are represented by an explosion, sunken ships are displayed in full on the map.<br>'
+HOWTO_TEXT +='Once all ships have been sunk, you win the game!<br> <br>'
+HOWTO_TEXT +='The offset parameters in the action panel allow to navigate a grid larger than the displayed zone, enter an offset and the camera shall shift so that you can select otherwise inaccessible cells.<br> <br>'
+HOWTO_TEXT +='Make sure to confirm a new value in an input field by pressing the Return/Enter key.<br>'
+
 class Menu:
     def __init__(self,window_surface:pygame.Surface) -> None:
         self.grid = BattleGrid(0,0,[ShipType.SUBMARINE]*4+[ShipType.TORPEDO]*3+[ShipType.ESCORTE]*2+[ShipType.CRUISER],randint(0,maxsize))
@@ -64,7 +73,7 @@ class Menu:
             starting_layer_height=1
         )
         self.howto_text = pygame_gui.elements.UITextBox(
-            html_text="Dems the rules",
+            html_text=HOWTO_TEXT,
             relative_rect=pygame.Rect((45, 40), (400, 300)),
             manager=self.manager,
             container=self.howto_panel,
