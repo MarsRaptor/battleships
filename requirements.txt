@@ -1,1 +1,5 @@
 Pillow==8.4.0
+pygame==2.0.2
+pygame-gui==0.5.7
+clipboard==0.0.4
+pyperclip==1.8.2
